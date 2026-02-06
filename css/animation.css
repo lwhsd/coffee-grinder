@@ -1,0 +1,117 @@
+/* Cup logo animation */
+.cup-logo {
+     width: min(185px, 50vw);
+     display: grid;
+     place-items: center;
+     gap: 12px;
+     margin-left: auto;
+     margin-right: auto;
+
+ }
+
+ svg {
+     width: 100%;
+     height: auto;
+     overflow: visible;
+ }
+
+ .steam path {
+     fill: none;
+     stroke: #000;
+     stroke-width: 7;
+     stroke-linecap: round;
+     stroke-linejoin: round;
+     opacity: 0.85;
+ }
+
+ .wisp1 {
+     stroke-dasharray: 260;
+     stroke-dashoffset: 260;
+     animation: rise 2.2s ease-in-out infinite;
+ }
+
+ .wisp2 {
+     stroke-dasharray: 240;
+     stroke-dashoffset: 240;
+     animation: rise 2.6s ease-in-out infinite;
+     animation-delay: .3s;
+     opacity: 0.75;
+ }
+
+ .wisp3 {
+     stroke-dasharray: 280;
+     stroke-dashoffset: 280;
+     animation: rise 2.9s ease-in-out infinite;
+     animation-delay: .6s;
+     opacity: 0.65;
+ }
+
+ @keyframes rise {
+     0% {
+         stroke-dashoffset: 200;
+         transform: translateY(6px);
+         opacity: 0;
+     }
+
+     20% {
+         opacity: .9;
+     }
+
+     60% {
+         opacity: .9;
+     }
+
+     100% {
+         stroke-dashoffset: 0;
+         transform: translateY(-14px);
+         opacity: 0;
+     }
+ }
+
+ .cup {
+     transform-origin: 50% 90%;
+     animation: cupBob 3.2s ease-in-out infinite;
+ }
+
+ @keyframes cupBob {
+
+     0%,
+     100% {
+         transform: translateY(0px);
+     }
+
+     50% {
+         transform: translateY(2px);
+     }
+ }
+
+ /* grinder logo footer */
+ .grinder {
+     margin-bottom: 6px;
+     position: relative;
+     height: 65px;
+     perspective: 800px;
+ }
+
+ .grinder img {
+     position: absolute;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+ }
+
+ .handle {
+     transform-origin: 50% 30%;
+     animation: spin 1.5s linear infinite;
+     backface-visibility: hidden;
+ }
+
+ @keyframes spin {
+     from {
+         transform: rotateY(0deg);
+     }
+
+     to {
+         transform: rotateY(360deg);
+     }
+ }

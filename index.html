@@ -1,0 +1,145 @@
+<!--https://docs.google.com/spreadsheets/d/1e5xjRpkDiXSTQEl2u_u5WkkByxB7ik9q4_swP1c7Jwk/edit?gid=1248531944#gid=1248531944 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Grinder Settings Converter</title>
+    <link rel="stylesheet" href="./css/c.css">
+    <link rel="stylesheet" href="./css/animation.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="cup-logo">
+                <svg viewBox="0 0 400 400" aria-label="Coffee cup with animated steam" role="img">
+
+                    <g class="steam">
+                        <path class="wisp1" d="M160 150
+                            C140 130, 180 120, 160 100
+                            C145 85, 175 75, 165 60" />
+
+                        <path class="wisp2" d="M220 150
+                            C200 130, 240 120, 220 100
+                            C205 85, 235 75, 225 60" />
+
+                        <path class="wisp3" d="M280 150
+                            C260 130, 300 120, 280 100
+                            C265 85, 295 75, 285 60" />
+                    </g>
+
+
+                    <!-- Cup -->
+                    <g class="cup" fill="#543310">
+                        <!-- Saucer -->
+                        <path d="M90 325 C120 355, 280 355, 310 325 C280 340, 120 340, 90 325 Z" />
+                        <!-- Cup body -->
+                        <path d="M120 180
+                            C120 260, 140 305, 200 315
+                            C260 305, 280 260, 280 180
+                            Z" />
+                        <!-- Cup top rim -->
+                        <rect x="110" y="170" width="180" height="22" rx="11" />
+                        <!-- Handle -->
+                        <path d="M280 205
+                            C330 205, 340 265, 290 275
+                            L285 258
+                            C315 252, 312 225, 285 225
+                            Z" />
+                    </g>
+                </svg>
+            </div>
+
+        </div>
+
+        <div class="content">
+            <!-- Converter Section -->
+            <div class="converter-section">
+                <div class="converter-title">Coffee Grinder Settings Converter</div>
+                <div class="converter-grid">
+                    <div class="converter-item">
+                        <label class="converter-label">From Grinder:</label>
+                        <div class="converter-dropdown" id="fromGrinderDropdown">
+                            <button class="converter-dropdown-button" id="fromGrinderButton">
+                                <span>Select grinder...</span>
+                                <span class="dropdown-arrow"><span class="beans-icon"></span></span>
+                            </button>
+                            <div class="converter-dropdown-menu" id="fromGrinderMenu"></div>
+                        </div>
+                        <input type="text" class="converter-input" id="fromSettingInput"
+                            placeholder="Enter setting (e.g., 0.3.5 or 15)" disabled>
+                    </div>
+
+                    <div class="converter-arrow">→</div>
+
+                    <div class="converter-item">
+                        <label class="converter-label">To Grinder:</label>
+                        <div class="converter-dropdown" id="toGrinderDropdown">
+                            <button class="converter-dropdown-button" id="toGrinderButton">
+                                <span>Select grinder...</span>
+                                <span class="dropdown-arrow"><span class="beans-icon"></span></span>
+                            </button>
+                            <div class="converter-dropdown-menu" id="toGrinderMenu"></div>
+                        </div>
+                        <div class="converter-input"
+                            style="background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #666;">
+                            Converted setting will appear here
+                        </div>
+                    </div>
+                </div>
+                <div class="converter-result" id="converterResult"></div>
+            </div>
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search by grind size, microns, or category..."
+                        id="searchInput">
+                </div>
+
+                <div class="dropdown" id="grindDropdown">
+                    <button class="dropdown-button" id="dropdownButton">
+                        <span>Select a grind size...</span>
+                        <span class="dropdown-arrow"><span class="beans-icon"></span></span>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu"></div>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="selected-info" id="selectedInfo"></div>
+                <h3 class="results-title">Equivalent Settings Across Grinders</h3>
+                <div class="grinder-grid" id="grinderGrid"></div>
+            </div>
+        </div>
+
+
+        
+        <footer class="footer">
+            <div class="footer-before grinder">
+                <img src="assets/grinder-body.svg">
+                <img src="assets/grinder-handle.svg" class="handle">
+            </div>
+            <p class="reddit-line">
+                Conversion data brewed from
+                <a class="reddit"
+                    href="https://www.reddit.com/r/pourover/comments/18gvdl6/grinder_conversion_spreadsheet_for_some_popular/"
+                    target="_blank">
+                    r/pourover
+                </a>
+                on
+                <span class="reddit-wrap">
+                    <img src="assets/icons8-reddit-24.png" alt="Reddit" />
+                </span>
+            </p>
+            <p class="signoff">© 2026 - Happy grinding!</p>
+
+        </footer>
+
+    </div>
+
+    <script src="./coffee.js" defer></script>
+</body>
+
+</html>
